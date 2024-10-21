@@ -1,0 +1,50 @@
+costume,Costume_type,candy_pieces,age,g_candy_consumed,sugar_high,min_temp_trick_treat_C
+barbie,not scary,2,8,108,Yes,5.8
+cheerleader,Uncertain,1,10,18,no,-1.9
+clown,Uncertain,3,13,122,yes,-0.6
+cowboy,Not scary,1,10,20,no,-4.1
+creepy clown,Scary,4,14,132,yes,-3.6
+devil,Scary,4,13,140,yes,0.3
+dog,Not scary,1,6,28,no,9.4
+doll,Not scary,1,10,42,no,-3.9
+Dracula,Scary,4,12,125,yes,-1.7
+dragon,Uncertain,2,7,83,no,9.2
+elephant,Not scary,2,8,13,no,3.3
+Ernie,not scary,1,6,20,no,10
+evil jester,Scary,16,12,375,Yes,-2.2
+fairy,Not scary,1,9,36,no,3.9
+fire fighter,Not scary,9,8,205,yes,4.6
+folk dancer,Not scary,1,8,30,no,3.3
+ghost bride,scaly,5,15,150,yes,-1.8
+headless man,Scary,5,15,137,yes,3.9
+jack frost,Not scary,2,6,67,no,12.8
+kitty cat,Not scary,1,7,47,no,6.2
+Mermaid,Not scary,1,4,22,no,10
+motorcycle cop,Uncertain,7,16,100,no,-0.6
+mouse,Not scary,2,7,62,no,7.6
+mummy,scary,6,11,172,yes,0
+ninja,Uncertain,2,5,71,no,8.9
+ninja,Uncertain,3,9,93,no,4.4
+oatmeal cookie,Not scary,3,6,90,no,11.7
+pirate,Uncertain,3,10,102,no,-2.2
+pirate,Uncertain,3,12,96,no,0.6
+pirate,scary,3,13,112,NO,-1.7
+politician,Uncertain,6,14,182,yes,0
+priest,Uncertain,4,15,100,no,5
+princess,notscary,1,4,18,No,6.1
+Princess,Not scary,3,6,93,NO,-1.7
+pumpkin,Uncertain,1,5,14,no,8.3
+Rabbit,Not scary,2,4,56,no,8.3
+spiderman,Not scary,3,6,100,yes,7.2
+Sponge Bob,Not scary,2,4,60,no,7.2
+superman,Not scary,2,5,69,no,8.3
+Unicorn,Uncertain,1,7,32,no,4.5
+unicorn,Not scary,2,8,75,no,7.4
+vampire,Scary,3,13,110,no,-3.9
+werewolf,Scary,1,14,25,no,-4.3
+Witch,Scary,5,5,160,yes,11.1
+witch,Scary,4,8,116,no,3.7
+witch ,scary ,4,9,115,no,2.8
+wonder woman,Not scary,1,9,12,no,7.2
+zombie,Scary,7,10,155,yes,0
+Zombie,Scary,5,14,148,yes,-5.6
