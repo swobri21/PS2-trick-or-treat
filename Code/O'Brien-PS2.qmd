@@ -1,0 +1,143 @@
+---
+title: "O'Brien-PS2"
+author: "S.O'Brien"
+format: html
+---
+
+# set things up
+```{r}
+rm(list = ls())
+library(tidyverse)
+library(here)
+```
+
+# import data
+```{r}
+halloween <- read.csv(here("Data/Halloween_data_PS2.csv"))
+```
+
+# check out data
+```{r}
+glimpse(halloween)
+summary(halloween)
+```
+
+# change data type
+```{r}
+# change costume_type to fct
+halloween$Costume_type <- 
+  as.factor(halloween$Costume_type)
+levels(halloween$Costume_type)
+# change costume to fct
+halloween$costume <- 
+  as.factor(halloween$costume)
+levels(halloween$costume)
+# change sugar_high to fct
+halloween$sugar_high <- 
+  as.factor(halloween$sugar_high)
+levels(halloween$sugar_high)
+```
+
+# fixing errors
+```{r}
+# fix costume_type error
+fix <- which(halloween$Costume_type == "not scary")
+halloween$Costume_type[fix] <- "Not scary"
+
+fix1 <- which(halloween$Costume_type == "notscary")
+halloween$Costume_type[fix1] <- "Not scary"
+
+fix2 <- which(halloween$Costume_type == "scaly")
+halloween$Costume_type[fix2] <- "Scary"
+
+fix3 <- which(halloween$Costume_type == "scary")
+halloween$Costume_type[fix3] <- "Scary"
+
+fix4 <- which(halloween$Costume_type == "scary ")
+halloween$Costume_type[fix4] <- "Scary"
+
+halloween$Costume_type <- factor(halloween$Costume_type)
+levels(halloween$Costume_type)
+
+#fix sugar_high errors
+fix5 <- which(halloween$sugar_high == "no")
+halloween$sugar_high[fix5] <- "No"
+
+fix6 <- which(halloween$sugar_high == "NO")
+halloween$sugar_high[fix6] <- "No"
+
+fix7 <- which(halloween$sugar_high == "yes")
+halloween$sugar_high[fix7] <- "Yes"
+
+halloween$sugar_high <- factor(halloween$sugar_high)
+levels(halloween$sugar_high)
+
+# fix costume errors
+fix8 <- which(halloween$costume == "Princess")
+halloween$costume[fix8] <- "princess"
+
+fix9 <- which(halloween$costume == "Unicorn")
+halloween$costume[fix9] <- "unicorn"
+
+fix10 <- which(halloween$costume == "Witch")
+halloween$costume[fix10] <- "witch"
+
+fix11 <- which(halloween$costume == "witch ")
+halloween$costume[fix11] <- "witch"
+
+fix12 <- which(halloween$costume == "Zombie")
+halloween$costume[fix12] <- "zombie"
+
+halloween$costume <- factor(halloween$costume)
+levels(halloween$costume)
+```
+
+# scatterplot of min_temp_trick_treat_C vs. age
+```{r}
+ggplot(halloween, aes(x = age, y = min_temp_trick_treat_C, shape = Costume_type, colour = Costume_type)) +
+  geom_point(size = 4) +
+  theme_bw() +
+  xlab("Age of trick-or-treaters (years)") +
+  ylab("Minimum temperature while out (C)") +
+  labs(caption = "Figure 1. Minimum temperature that kids will trick-or-treat before going home as a function of each child’s age and costume type.") +
+  theme(plot.caption = element_text(face = "italic", size = 10, hjust = 0))
+```
+
+# histogram of number of halloween candy eaten
+```{r}
+halloween_hist <- halloween |> 
+  filter(age >= 10 & g_candy_consumed >= 100)
+
+ggplot(halloween_hist, aes(x = candy_pieces)) +
+  geom_histogram(binwidth = .55) +
+  xlab("Number of candy pieces eaten") +
+  labs(caption = "Figure 2. Count of number of children (age 10 and older and who consumed at least 100 grams of candy) eating different
+numbers of pieces of candy.") +
+  theme(plot.caption = element_text(face = "italic", size = 10, hjust = 0))
+```
+
+# summary statistics 
+```{r}
+halloween |>
+  group_by(sugar_high) |>
+  summarise(mean_age = mean(age),
+            mean_consumed = mean(g_candy_consumed),
+            sd_age = sd(age),
+            sd_consumed = sd(g_candy_consumed)) |>
+  view()
+```
+
+# costume type vs. amount candy consumed boxplots
+```{r}
+ggplot(halloween, aes(x = Costume_type, y = g_candy_consumed)) +
+  geom_boxplot() +
+  geom_point(colour = "orange", alpha = 0.7) +
+  facet_wrap(~ sugar_high) +
+  theme_bw() +
+  ylab("Amount of candy consumed (g)") +
+  xlab("Costume type") +
+  labs(caption = "Figure 3. Box and whisker plot showing amount of candy consumed by children wearing different types of Halloween
+costume separated according to whether the child experienced a resulting sugar high (“no” vs. “yes”).") +
+  theme(plot.caption = element_text(face = "italic", size = 10, hjust = 0)) 
+```
+
