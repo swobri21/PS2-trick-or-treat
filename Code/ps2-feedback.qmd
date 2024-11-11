@@ -1,0 +1,14 @@
+---
+title: "ps2-feedback"
+format: html
+editor: visual
+---
+
+## PS2 Feedback
+I'd like to see you work on providing commentary to your code, especially after you execute a code chunk. For example, on your lines 20 - 23, you examine the data, but you never make note of what is interesting/important/needs to be remembered afterwards. Think of your .qmd as needing to stand alone without the project assignment .pdf file so that future you will be able to look at it an understand everythign that you were doing and why.
+
+Remember that not every character variable has to be a factor. It does not make sense to have a factor variable with 41 levels in a dataset with only 49 rows.
+
+You didn't do any error checking on the numeric variables.
+
+Overall though, nice job. Also see comments on .pdf grade sheet.
